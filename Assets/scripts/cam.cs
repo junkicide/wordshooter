@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class colorholder : MonoBehaviour {
+public class cam : MonoBehaviour {
 
-	public static Color bgcolor;
-	void Awake() {
-		DontDestroyOnLoad(transform.gameObject);
-	}
 	// Use this for initialization
 	void Start () {
-	
+		Camera.main.backgroundColor = colorholder.bgcolor;
+
 	}
 	
 	// Update is called once per frame

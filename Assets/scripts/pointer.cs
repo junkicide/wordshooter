@@ -9,8 +9,10 @@ public class pointer : MonoBehaviour {
 	}
 	void Update () {
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		transform.position = new Vector3 (ray.GetPoint(20f).x, ray.GetPoint(20f).y, ray.GetPoint(20f).z);
+		transform.position = new Vector3 (ray.GetPoint(10f).x, ray.GetPoint(10f).y, -1f);
 	}
+
+
 	// Update is called once per frame
 
 }

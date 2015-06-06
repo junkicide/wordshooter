@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class controller : MonoBehaviour {
@@ -16,8 +16,8 @@ public class controller : MonoBehaviour {
 	
 	int chooseball = Random.Range(1, 4);
 
-		inittext(word, chooseball);
-		dropballs();
+		inittext(word);
+		//startRound();
 }
 	
 	// Update is called once per frame
@@ -26,22 +26,25 @@ public class controller : MonoBehaviour {
 			
 	
 	}
-		 void inittext(string w, int ball){
-			if (ball == 1){
-			GameObject.Find("2").GetComponent<TextMesh>().text = "" + possible[Random.Range (0,possible.Length)];
-			GameObject.Find("3").GetComponent<TextMesh>().text = "" +possible[Random.Range (0,possible.Length)];
-			GameObject.Find(ball.ToString()).GetComponent<TextMesh>().text = "" + w[ctr];
-			
-		}
-		else if (ball == 2) {
-			GameObject.Find("1").GetComponent<TextMesh>().text = "" + possible[Random.Range (0,possible.Length)];
-			GameObject.Find("3").GetComponent<TextMesh>().text = "" + possible[Random.Range (0,possible.Length)];
-			GameObject.Find(ball.ToString()).GetComponent<TextMesh>().text = "" + w[ctr];
-		}
-		else {
-			GameObject.Find("1").GetComponent<TextMesh>().text = "" + possible[Random.Range (0,possible.Length)];
-			GameObject.Find("2").GetComponent<TextMesh>().text = "" + possible[Random.Range (0,possible.Length)];
-			GameObject.Find(ball.ToString()).GetComponent<TextMesh>().text = "" + w[ctr];
-		}
+		 void inittext(string w){
+		GameObject.Find ("ball1").transform.FindChild("text").gameObject.GetComponent<TextMesh>().text = "" + randletter(w[ctr]);
+		GameObject.Find ("ball2").transform.FindChild("text").gameObject.GetComponent<TextMesh>().text = "" + randletter(w[ctr]);
+		GameObject.Find ("ball3").transform.FindChild("text").gameObject.GetComponent<TextMesh>().text = "" + w[ctr];
 }
+
+	char randletter (char a)
+	{
+	while (true)
+	{
+			char l= possible[Random.Range(0, possible.Length)];
+		if (l==a){
+			continue;
+			}
+		else{
+			return l;
+			break;
+			}
+		}
+	}
+
 }
