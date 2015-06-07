@@ -7,10 +7,23 @@ public class controller : MonoBehaviour {
 	int ctr = 0;
 	string word;
 	int turns = 0;
+	Ball ballprefab;
+	Ball ball1;
+	Ball ball2;
+	Ball ball3;
+	
 	
 
 	// Use this for initialization
 	 void Start () {
+		ball1 = Instantiate (ballprefab) as Ball;
+		ball2 = Instantiate (ballprefab) as Ball;
+		ball3 = Instantiate (ballprefab) as Ball;
+
+
+		ball2.transform.position=  new Vector3(0, 6, 0);
+		ball3.transform.position = new Vector3(5, 6, 0);
+
 	string word = words[Random.Range(0, words.Length)];
 		turns ++;
 	
