@@ -12,7 +12,7 @@ Platform assembly: C:\unity projects\wordshooter\shooter_Data\Managed\Assembly-C
 Loading C:\unity projects\wordshooter\shooter_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\unity projects\wordshooter\shooter_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\unity projects\wordshooter\shooter_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.177 seconds
+- Completed reload, in  0.208 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
@@ -20,10 +20,17 @@ XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Initialized touch support.
 Platform assembly: C:\unity projects\wordshooter\shooter_Data\Managed\System.Core.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 524 -> priority: 1 
+  Thread -> id: 1a1c -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.735693 ms
+UnloadTime: 0.703614 ms
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 180.
-Total: 0.186062 ms (FindLiveObjects: 0.029085 ms CreateObjectMapping: 0.019247 ms MarkObjects: 0.116770 ms  DeleteObjects: 0.020103 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 185.
+Total: 0.292138 ms (FindLiveObjects: 0.055177 ms CreateObjectMapping: 0.026946 ms MarkObjects: 0.179218 ms  DeleteObjects: 0.029085 ms)
+
+ArgumentException: The thing you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate[Ball] (.Ball original) [0x00000] in <filename unknown>:0 
+  at controller.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
