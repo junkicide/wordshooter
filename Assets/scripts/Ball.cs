@@ -1,27 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour {
-
+public class Ball : MonoBehaviour { // ball properties
+	public string letter;
 	// Use this for initialization
 	void Start () {
-	
+
+
+		transform.position = new Vector3 (transform.position.x, 6f, transform.position.z); // set initial position
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		transform.position = new Vector3 (transform.position.x, transform.position.y - 0.5f*Time.deltaTime, transform.position.z);
+		this.transform.Find("txt").gameObject.GetComponent<TextMesh>().text = letter; //updates text mesh to letter assigned by gamecontol
+		transform.position = new Vector3 (transform.position.x, transform.position.y - 1f*Time.deltaTime, transform.position.z); //updates positiion
 		}
 
 	void OnBecameInvisible()
 	{
-			transform.position = new Vector3 (transform.position.x, 6f, transform.position.z);
+		Start (); // in case balls go out of view go back to initial position
 		}
 	void OnMouseDown()
 	{
-		wordcontrol.addletter(gameObject.transform.FindChild("text").GetComponent<TextMesh>().text);
-			Destroy(gameObject);
+		gamecontrol.aword += letter; // add letter to word on click
+		Application.LoadLevel(Application.loadedLevel); // reload level
 		}
 
 }

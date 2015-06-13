@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cam : MonoBehaviour {
+public class cam : MonoBehaviour { // sets background color
+
+	public GUISkin ScoreSkin;
 
 	// Use this for initialization
 	void Start () {
-		Camera.main.backgroundColor = colorholder.bgcolor;
+		Camera.main.backgroundColor = holder.bgcolor; 
 
 	}
 	

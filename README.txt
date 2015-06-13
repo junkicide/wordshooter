@@ -3,36 +3,45 @@ WORD SHOOTER
 
 *****
 
+Optimized for 640 x 480 resolution
+
+
 GAME PLAN
 
 scene 1:
 
-3 cubes with renderers coloured red, blue and green.
+*objects: 3 cubes, one cursor pointer
+- a holder script contains the new game parameter and the color of next scene's background
 
-clicking on any one saves colour to static variable in bgcolor object
-
-load next scene
+- on clicking one of the cubes, background for next scene is set via the next scene's camera and next scene is loaded
 
 
 
 
 scene 2:
 
-3 spheres coloured yellow, 3 text meshes coloured black, 1 pointer object (shooter)
+*objects: one cursor pointer
 
-- spheres are initialized
 
-- when one sphere is clicked on, its text mesh is sent to a letter collecting function in wordcontrol, and sphere is destroyed
+- spheres are instantiated
 
-- new spheres are initialized from the controller object one of which contains correct next letter[not fully implemented]
+- letters are assigned to two spheres random, and one is given the first letter of the qword. the sphere that gets the first letter is picked randomly.
 
--cycle continues until all letters of the word are exhausted
+
+- on clicking the sphere, the letter gets added to the string aword
  
-- at the end of the word, the string obtained in wordcontrol is checked against the question string[not yet implemented], and returns a "well done!" or "oh no, you've got it wrong!"
 
-- checking is done only after all the letters of the word have been played, and not after each letter.
+- when the length of aword become equals to qword, game switches to the previous scene.
 
 
+
+scene 1:
+
+- if aword and qword are equal, displays "YOU WON!"
+
+- if they aren't, displays "YOU LOST"
+
+- new game starts upon clicking ones of the background selection cubes again
 
 
 
